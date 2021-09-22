@@ -13,7 +13,7 @@ public class LinkedLists {
 		List.addAtStart(70);
 		List.addAtStart(56);
 		List.insertAfter(List.head, 30);
-		List.popLast();
+		List.search(30);
 		List.display();
 
 	}
@@ -109,6 +109,7 @@ public class LinkedLists {
 		preNode.next = newNode;
 
 	}
+
 	void pop() {
 		if (this.head != null) {
 
@@ -118,8 +119,9 @@ public class LinkedLists {
 
 			temp = null;
 		}
-		
+
 	}
+
 	void popLast() {
 		if (head == null)
 			return;
@@ -137,5 +139,30 @@ public class LinkedLists {
 		second_last.next = null;
 
 		return;
+	}
+
+	public boolean search(Integer data) {
+		boolean flag = false;
+		int i = 1;
+
+		Node current = head;
+		if (head == null) {
+			System.out.println("empty");
+		}
+		while (current != null) {
+			if (current.data == data) {
+				System.out.println("found");
+				flag = true;
+				break;
+			}
+			i++;
+			current = current.next;
+		}
+		if (flag) {
+			System.out.println("element is present at:" + i);
+		} else {
+			System.out.println("element is absent");
+		}
+		return flag;
 	}
 }
