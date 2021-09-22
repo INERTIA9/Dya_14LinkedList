@@ -12,8 +12,8 @@ public class LinkedLists {
 
 		List.addAtStart(70);
 		List.addAtStart(56);
-		List.insertAfter(List.head,30);
-		
+		List.insertAfter(List.head, 30);
+		List.pop();
 		List.display();
 
 	}
@@ -97,6 +97,7 @@ public class LinkedLists {
 			last = last.next;
 		last.next = newNode;
 	}
+
 	public void insertAfter(Node preNode, int newdata) {
 		if (preNode == null) {
 			System.out.println("invalid");
@@ -108,4 +109,16 @@ public class LinkedLists {
 		preNode.next = newNode;
 
 	}
+	void pop() {
+		if (this.head != null) {
+
+			Node temp = this.head;
+
+			this.head = this.head.next;
+
+			temp = null;
+		}
+		
+	}
+
 }
