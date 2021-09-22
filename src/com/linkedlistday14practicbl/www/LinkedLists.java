@@ -13,7 +13,7 @@ public class LinkedLists {
 		List.addAtStart(70);
 		List.addAtStart(56);
 		List.insertAfter(List.head, 30);
-		List.pop();
+		List.popLast();
 		List.display();
 
 	}
@@ -120,5 +120,22 @@ public class LinkedLists {
 		}
 		
 	}
+	void popLast() {
+		if (head == null)
+			return;
 
+		if (head.next == null) {
+			return;
+		}
+
+		// Find the second last node
+		Node second_last = head;
+		while (second_last.next.next != null)
+			second_last = second_last.next;
+
+		// Change next of second last
+		second_last.next = null;
+
+		return;
+	}
 }
