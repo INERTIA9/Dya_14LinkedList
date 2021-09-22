@@ -10,10 +10,9 @@ public class LinkedLists {
 
 		LinkedLists List = new LinkedLists();
 
-		List.addnode(56);
-		List.addnode(30);
-		List.addnode(70);
-
+		List.addAtStart(56);
+		List.addATEnd(30);
+		List.addATEnd(70);
 		List.display();
 
 	}
@@ -83,5 +82,18 @@ public class LinkedLists {
 			head = newNode;
 			head.next = temp;
 		}
+	}
+
+	public void addATEnd(int newdata) {
+		Node newNode = new Node(newdata);
+		if (head == null) {
+			head = new Node(newdata);
+			return;
+		}
+		newNode.next = null;
+		Node last = head;
+		while (last.next != null)
+			last = last.next;
+		last.next = newNode;
 	}
 }
