@@ -70,4 +70,18 @@ public class LinkedLists {
 		head = newNode;
 	}
 
+	public void addAtStart(int newdata) {
+
+		Node newNode = new Node(newdata);
+
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+		} else {
+			Node temp = head;
+
+			head = newNode;
+			head.next = temp;
+		}
+	}
 }
